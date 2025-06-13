@@ -12,10 +12,12 @@ namespace AwesomeTanks
 {
     public partial class Form1 : Form
     {
+        public static Form f;
         public Form1()
         {
             InitializeComponent();
             ChangeScreen(this, new GameScreen());
+            f = this;
         }
 
         public static void ChangeScreen(object sender, UserControl next)

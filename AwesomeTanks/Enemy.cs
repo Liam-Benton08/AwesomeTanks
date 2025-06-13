@@ -10,18 +10,24 @@ namespace AwesomeTanks
 {
     internal class Enemy
     {
-        public double x, y;
-        public int size = 15;
+        public double x, y, lastX, lastY;
+        public int size = 25;
         public double speedX = 5, speedY = 5;
-        public double health = 10, fullhealth = 10;
+        public double health, fullhealth;
+        public int range;
 
         public int hitCooldown;
         public int fireCooldown;
 
-        public Enemy(double _x, double _y)
+        public bool wallInBetween;
+
+        public Enemy(double _x, double _y, double _health, int _range)
         {
             x = _x;
             y = _y;
+            health = fullhealth = _health;
+            range = _range;
+
         }
 
         public bool BulletCollision(Enemy e, Bullet b)
@@ -49,15 +55,13 @@ namespace AwesomeTanks
             y += ySpeed;
         }
 
-        public Bullet FireBullet(double x1, double y1, double x2, double y2)
+        public Bullet FireBullet(double x1, double y1, double x2, double y2, double speed)
         {
             double angle = GameScreen.CalculateAngle(x1, y1, x2, y2);
 
-            double speed = 8;
-
             var (xSpeed, ySpeed) = GameScreen.GetVelocity(angle, speed);
 
-            Bullet newBullet = new Bullet(xSpeed, ySpeed, x, y, angle, "Enemy");
+            Bullet newBullet = new Bullet(xSpeed, ySpeed, x1, y1, angle, "Enemy");
             return newBullet;
         }
     }
