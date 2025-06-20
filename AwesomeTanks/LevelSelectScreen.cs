@@ -63,7 +63,7 @@ namespace AwesomeTanks
 
         private void tutButton_Click(object sender, EventArgs e)
         {
-            level = 5; //sets level
+            level = 0; //sets level
             Form1.ChangeScreen(this, new GameScreen()); //changes screen
             Form1.buttomPress.Play(); //plays sound
         }
