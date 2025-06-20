@@ -37,7 +37,7 @@
             // 
             this.moneyEarnedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.moneyEarnedLabel.ForeColor = System.Drawing.Color.Gold;
-            this.moneyEarnedLabel.Location = new System.Drawing.Point(50, 182);
+            this.moneyEarnedLabel.Location = new System.Drawing.Point(32, 186);
             this.moneyEarnedLabel.Name = "moneyEarnedLabel";
             this.moneyEarnedLabel.Size = new System.Drawing.Size(500, 50);
             this.moneyEarnedLabel.TabIndex = 0;

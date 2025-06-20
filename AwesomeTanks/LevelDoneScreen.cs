@@ -22,11 +22,22 @@ namespace AwesomeTanks
             {
                 levelOverLabel.Text = "Level Failed";
             }
+            else if(GameScreen.levelFailed == false)  
+            {
+                levelOverLabel.Text = "Level Complete";
+            }
 
             moneyEarnedLabel.Text = $"You Earned: {GameScreen.moneyEarned}"; //shows how much money was made
 
             GameScreen.currency += GameScreen.moneyEarned;
             GameScreen.moneyEarned = 0;
+
+            if (LevelSelectScreen.level == 6)
+            {
+                levelOverLabel.Text = "You Beat The Gane!!!";
+                moneyEarnedLabel.Text = "Congrats!!!";
+            }
+
         }
 
         private void continueButton_Click(object sender, EventArgs e)
