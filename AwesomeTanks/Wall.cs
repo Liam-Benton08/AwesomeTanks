@@ -35,27 +35,27 @@ namespace AwesomeTanks
         {
             if (type == "unbreakable")
             {
-                wallBrush = new SolidBrush(Color.White);
+                wallBrush = new SolidBrush(Color.White); //sets colours based off of type
                 hp = 1;
             }
             else if (type == "soloBreak")
             {
                 wallBrush = new SolidBrush(Color.Red);
-                hp = 5;
+                hp = 20;
             }
             else
             {
                 wallBrush = new SolidBrush(Color.Yellow);
-                hp = 8;
+                hp = 30;
             }
         }
 
         public bool Collision(Wall w, Player hero)
         {
             Rectangle playerRec = new Rectangle(hero.x, hero.y, hero.size, hero.size);
-            Rectangle wallRec = new Rectangle(w.x, w.y, w.width, w.height);
+            Rectangle wallRec = new Rectangle(w.x, w.y, w.width, w.height); //makes the rectangles
 
-            if (playerRec.IntersectsWith(wallRec))
+            if (playerRec.IntersectsWith(wallRec)) //checks for collisions
             {
                 return true;
             }
@@ -66,7 +66,7 @@ namespace AwesomeTanks
         public bool AICollision(Wall w, Enemy enemy)
         {
             Rectangle enemyRec = new Rectangle(Convert.ToInt16(enemy.x), Convert.ToInt16(enemy.y), enemy.size, enemy.size);
-            Rectangle wallRec = new Rectangle(w.x, w.y, w.width, w.height);
+            Rectangle wallRec = new Rectangle(w.x, w.y, w.width, w.height);//same old same old
 
             if (enemyRec.IntersectsWith(wallRec))
             {

@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<level>
+	<spawner>
+		<x>450</x>
+		<y>150</y>
+		<type>1</type>
+	</spawner>
+	<spawner>
+		<x>740</x>
+		<y>450</y>
+		<type>1</type>
+	</spawner>
+	<spawner>
+		<x>250</x>
+		<y>800</y>
+		<type>2</type>
+	</spawner>
+</level>

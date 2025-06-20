@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<level>
+	<wall>
+		<x>0</x>
+		<y>0</y>
+		<width>0</width>
+		<height>0</height>
+		<type>unbreakable</type>
+	</wall>
+	<wall>
+		<x>0</x>
+		<y>0</y>
+		<width>0</width>
+		<height>0</height>
+		<type>unbreakable</type>
+	</wall>
+</level>

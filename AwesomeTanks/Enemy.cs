@@ -14,20 +14,31 @@ namespace AwesomeTanks
         public int size = 25;
         public double speedX = 5, speedY = 5;
         public double health, fullhealth;
-        public int range;
+        public int damageMulti;
+        public int coinValue;
 
         public int hitCooldown;
         public int fireCooldown;
 
         public bool wallInBetween;
 
-        public Enemy(double _x, double _y, double _health, int _range)
+        public Image enemyImage = Properties.Resources.Enemy;
+        public Image enemyCannonImage = Properties.Resources.EnemyCannon;
+
+        public Bitmap rotatedImage = Properties.Resources.Enemy;
+
+        public Enemy(double _x, double _y, double _health, int _damageMulti, int _coinValue)
         {
             x = _x;
             y = _y;
             health = fullhealth = _health;
-            range = _range;
+            damageMulti = _damageMulti;
+            coinValue = _coinValue;
 
+            if (health == 500)
+            {
+                size = 50;
+            }
         }
 
         public bool BulletCollision(Enemy e, Bullet b)
@@ -45,11 +56,11 @@ namespace AwesomeTanks
 
         public void MoveEnemy(double x1, double y1, double x2, double y2)
         {
-            double angle = GameScreen.CalculateAngle(x1, y1, x2, y2);
+            double angle = GameScreen.CalculateAngle(x1, y1, x2, y2); //calculates the angle between the player and enemy 
 
             double speed = 2;
 
-            var (xSpeed, ySpeed) = GameScreen.GetVelocity(angle, speed);
+            var (xSpeed, ySpeed) = GameScreen.GetVelocity(angle, speed); //gets speed proportional to angle
 
             x += xSpeed;
             y += ySpeed;
@@ -61,7 +72,7 @@ namespace AwesomeTanks
 
             var (xSpeed, ySpeed) = GameScreen.GetVelocity(angle, speed);
 
-            Bullet newBullet = new Bullet(xSpeed, ySpeed, x1, y1, angle, "Enemy");
+            Bullet newBullet = new Bullet(xSpeed, ySpeed, x1, y1, angle, "Enemy"); //fires bullet based of angle at player
             return newBullet;
         }
     }

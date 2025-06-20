@@ -14,7 +14,7 @@ namespace AwesomeTanks
         public double x, y;
         public double angle;
         public int size = 5;
-        public int damage = 2;
+        public int damage = 5;
         public string shooter;
 
 
@@ -32,7 +32,7 @@ namespace AwesomeTanks
 
         public void MoveBullet()
         {
-            x += speedX;
+            x += speedX; //moves bullets
             y += speedY;
         }
     }

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<spawners>
+	<spawner>
+		<x>200</x>
+		<y>150</y>
+		<type>3</type>
+	</spawner>
+	<spawner>
+		<x>950</x>
+		<y>150</y>
+		<type>3</type>
+	</spawner>
+	<spawner>
+		<x>600</x>
+		<y>500</y>
+		<type>4</type>
+	</spawner>
+	<spawner>
+		<x>100</x>
+		<y>700</y>
+		<type>5</type>
+	</spawner>
+	<spawner>
+		<x>1000</x>
+		<y>750</y>
+		<type>3</type>
+	</spawner>
+	<spawner>
+		<x>350</x>
+		<y>880</y>
+		<type>2</type>
+	</spawner>
+	<spawner>
+		<x>850</x>
+		<y>900</y>
+		<type>2</type>
+	</spawner>
+	<spawner>
+		<x>500</x>
+		<y>100</y>
+		<type>3</type>
+	</spawner>
+</spawners>
