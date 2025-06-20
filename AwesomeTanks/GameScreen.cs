@@ -281,6 +281,15 @@ namespace AwesomeTanks
                 foreach (Bullet b in bullets)
                 {
                     b.MoveBullet(); //Move the bullets
+
+                    if (LevelSelectScreen.level == 5)
+                    {
+                        if (b.x + b.size < 0 || b.x > arenaWidth || b.y + b.size < 0 || b.y > arenaHeight) //if bullet offscreen
+                        {
+                            bullets.Remove(b); //remove
+                        }
+                    }
+            
                 }
             }
 
@@ -304,6 +313,8 @@ namespace AwesomeTanks
             LevelOverCheck(); //Checks to see if the level is over
 
             Refresh();
+
+            
         }
 
         private void LevelOverCheck()
@@ -320,7 +331,7 @@ namespace AwesomeTanks
                     }
 
                     moneyEarned += 1000 * LevelSelectScreen.level; //adds money bonus depending on level
-
+                    levelFailed = false;
                     levelWin.Play(); //plays sound
                     gameTimer.Stop(); //stops gametimer
                     Form1.ChangeScreen(this, new LevelDoneScreen());//Changes screens
