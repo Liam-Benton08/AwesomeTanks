@@ -34,8 +34,16 @@ namespace AwesomeTanks
 
             if (LevelSelectScreen.level == 6)
             {
-                levelOverLabel.Text = "You Beat The Gane!!!";
-                moneyEarnedLabel.Text = "Congrats!!!";
+                if (GameScreen.levelFailed == false) // checks to see if user lost
+                {
+                    levelOverLabel.Text = "You Beat The Gane!!!";
+                    moneyEarnedLabel.Text = "Congrats!!!";
+                }
+                else if (GameScreen.levelFailed == true)
+                {
+                    levelOverLabel.Text = "You Failed!";
+                    moneyEarnedLabel.Text = "Try Again";
+                }
             }
 
         }

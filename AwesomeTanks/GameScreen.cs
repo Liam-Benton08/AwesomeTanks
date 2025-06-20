@@ -120,7 +120,7 @@ namespace AwesomeTanks
             w = new Wall(250, 750, 500, 30, "unbreakable");
             walls.Add(w);
 
-            Enemy e = new Enemy(300, 500, 500, 10, 9999999);
+            Enemy e = new Enemy(300, 500, 10000, 1000, 9999999);
             enemys.Add(e);
         }
 
@@ -575,6 +575,11 @@ namespace AwesomeTanks
                     if (e.fireCooldown < 0) //if able to shoot
                     {
                         Bullet newBullet = e.FireBullet(x1, y1, x2, y2, 10); //fires bullet
+
+                        if(LevelSelectScreen.level == 6)
+                        {
+                            newBullet.damage *= e.damageMulti;
+                        }
                         bullets.Add(newBullet); //adds bullet to the list
 
                         e.fireCooldown = 20; //resets the fire cooldown

@@ -35,7 +35,7 @@ namespace AwesomeTanks
             damageMulti = _damageMulti;
             coinValue = _coinValue;
 
-            if (health == 500)
+            if (health == 10000)
             {
                 size = 50;
             }
