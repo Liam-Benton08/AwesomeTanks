@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
@@ -281,15 +282,17 @@ namespace AwesomeTanks
                 foreach (Bullet b in bullets)
                 {
                     b.MoveBullet(); //Move the bullets
-
+                }
+                foreach (Bullet b in bullets)
+                {
                     if (LevelSelectScreen.level == 5)
                     {
                         if (b.x + b.size < 0 || b.x > arenaWidth || b.y + b.size < 0 || b.y > arenaHeight) //if bullet offscreen
                         {
                             bullets.Remove(b); //remove
+                            break;
                         }
                     }
-            
                 }
             }
 
@@ -453,14 +456,7 @@ namespace AwesomeTanks
                     }
                 }
 
-                int distance = 350; //regular distance to check for
-
-                if(LevelSelectScreen.level == 3)
-                {
-                    distance = 2000; // if special level then set range to far
-                }
-
-                if (deltaDistance < distance && s.canSpawn == true)
+                if (s.canSpawn == true)
                 {
                     if (s.spawnTime <= 0)
                     {
@@ -638,7 +634,7 @@ namespace AwesomeTanks
             {
                 if (hero.BulletCollision(bullets[i]) && bullets[i].shooter == "Enemy" && playerHitCooldown <= 0) //if bullet collides with hero and enemy shot it
                 {
-                    double damageMultiplier = 100.0 / (100 + (StoreScreen.armorLevel * 20)); //finds out what the multiplier is
+                    double damageMultiplier = 100.0 / (100 + (StoreScreen.armorLevel * 30)); //finds out what the multiplier is
                     int effectiveDamage = (int)(bullets[i].damage * damageMultiplier); //effective damage is lowered based on armour
                     hero.health -= effectiveDamage; //takes health away but not as much
                     
@@ -721,6 +717,7 @@ namespace AwesomeTanks
                             break;
                         }
                     }
+                    //if (bullets[i])
                 }
             }
         }
@@ -886,12 +883,6 @@ namespace AwesomeTanks
             e.Graphics.FillRectangle(playerBrush, hero.x + 1 - camera.X, hero.y + hero.size + 3 - camera.Y, Convert.ToInt16(hero.size * (hero.health / hero.fullhealth)), 3);
             e.Graphics.DrawRectangle(healthPen, hero.x - camera.X, hero.y + hero.size + 2 - camera.Y, hero.size, 5);
 
-            //Drawing the bullets
-            foreach (Bullet b in bullets)
-            {
-                e.Graphics.FillRectangle(playerBrush, Convert.ToInt16(b.x) - camera.X, Convert.ToInt16(b.y) - camera.Y, b.size, b.size);
-            }
-
             //Draws the spawners
             foreach (Spawner s in spawners)
             {
@@ -905,6 +896,20 @@ namespace AwesomeTanks
             foreach (Coin c in coins)
             {
                 e.Graphics.DrawImage(Properties.Resources.Coin, c.x - camera.X, c.y - camera.Y, c.size, c.size);
+            }
+
+            //Drawing the bullets
+            foreach (Bullet b in bullets)
+            {
+                Brush redBrush = new SolidBrush(Color.Red);
+                if (b.shooter == "Enemy")
+                {
+                    e.Graphics.FillRectangle(redBrush, Convert.ToInt16(b.x) - camera.X, Convert.ToInt16(b.y) - camera.Y, b.size, b.size);
+                }
+                else
+                {
+                    e.Graphics.FillRectangle(blueBrush, Convert.ToInt16(b.x) - camera.X, Convert.ToInt16(b.y) - camera.Y, b.size, b.size);
+                }
             }
 
             //Drawing the enemys
@@ -921,7 +926,14 @@ namespace AwesomeTanks
             //Draws the walls
             foreach (Wall w in walls)
             {
-                e.Graphics.FillRectangle(w.wallBrush, w.x - camera.X, w.y - camera.Y, w.width, w.height);
+                if (w.type != "unbreakable")
+                {
+                    e.Graphics.DrawImage(w.wallImage, w.x - camera.X, w.y - camera.Y, w.width, w.height);
+                }
+                else
+                {
+                    e.Graphics.FillRectangle(w.wallBrush, w.x - camera.X, w.y - camera.Y, w.width, w.height);
+                }
             }
 
 

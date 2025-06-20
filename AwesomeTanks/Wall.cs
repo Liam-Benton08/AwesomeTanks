@@ -19,6 +19,7 @@ namespace AwesomeTanks
         public string type;
 
         public Brush wallBrush;
+        public Image wallImage;
 
         public Wall(int _x, int _y, int _width, int _height, string _type)
         {
@@ -37,16 +38,19 @@ namespace AwesomeTanks
             {
                 wallBrush = new SolidBrush(Color.White); //sets colours based off of type
                 hp = 1;
+                wallImage = null;
             }
             else if (type == "soloBreak")
             {
                 wallBrush = new SolidBrush(Color.Red);
                 hp = 20;
+                wallImage = Properties.Resources.brick;
             }
             else
             {
                 wallBrush = new SolidBrush(Color.Yellow);
                 hp = 30;
+                wallImage= Properties.Resources.stone;
             }
         }
 

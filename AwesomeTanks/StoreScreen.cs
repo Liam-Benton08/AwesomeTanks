@@ -26,7 +26,7 @@ namespace AwesomeTanks
         {
             InitializeComponent();
 
-            coinsLabel.Text = $"{coins}";
+            coinsLabel.Text = $"Coins: {coins}";
 
             SettingShop(); //Everything resets, so doing this will put it back to however i left it
         }
@@ -121,7 +121,7 @@ namespace AwesomeTanks
             if (coins >= 100000) //if enough coins
             {
                 coins -= 100000; //subtract coins
-                coinsLabel.Text = $"{coins}";
+                coinsLabel.Text = $"Coins: {coins}";
                 rLBuyButton.Text = "PURCHASED";
                 rLBuyButton.Size = new Size(250, 50);
                 rLBuyButton.BackColor = Color.Green;
@@ -148,7 +148,7 @@ namespace AwesomeTanks
                 if(coins >= 1000) //if enough coins
                 {
                     coins -= 1000; //subtract coins
-                    coinsLabel.Text = $"{coins}"; //display amount left
+                    coinsLabel.Text = $"Coins:  {coins}"; //display amount left
                     Form1.armorLevel++;
                     armor2.BackColor = Color.Green;
                     armorAmountLabel.Text = "Price : 2500"; //change label
@@ -160,7 +160,7 @@ namespace AwesomeTanks
                 if(coins >= 2500)
                 {
                     coins -= 2500;
-                    coinsLabel.Text = $"{coins}";
+                    coinsLabel.Text = $"Coins: {coins}";
                     Form1.armorLevel++;
                     armor3.BackColor = Color.Green;
                     armorAmountLabel.Text = "Price : 6000";
@@ -172,7 +172,7 @@ namespace AwesomeTanks
                 if(coins >= 6000)
                 {
                     coins -= 6000;
-                    coinsLabel.Text = $"{coins}";
+                    coinsLabel.Text = $"Coins: {coins}";
                     Form1.armorLevel++;
                     armor4.BackColor = Color.Green;
                     armorAmountLabel.Text = "Price : 15000";
@@ -184,7 +184,7 @@ namespace AwesomeTanks
                 if (coins >= 15000)
                 {
                     coins -= 15000;
-                    coinsLabel.Text = $"{coins}";
+                    coinsLabel.Text = $"Coins: {coins}";
                     Form1.armorLevel++;
                     armor5.BackColor = Color.Green;
                     armorAmountLabel.Text = "";
@@ -203,7 +203,7 @@ namespace AwesomeTanks
                 if (coins >= 500)
                 {
                     coins -= 500;
-                    coinsLabel.Text = $"{coins}";
+                    coinsLabel.Text = $"Coins: {coins}";
                     Form1.speedLevel++;
                     speed2.BackColor = Color.Green;
                     speedAmountLabel.Text = "Price : 1250";
@@ -215,7 +215,7 @@ namespace AwesomeTanks
                 if (coins >= 1250)
                 {
                     coins -= 1250;
-                    coinsLabel.Text = $"{coins}";
+                    coinsLabel.Text = $"Coins: {coins}";
                     Form1.speedLevel++;
                     speed3.BackColor = Color.Green;
                     speedAmountLabel.Text = "Price : 3000";
@@ -227,7 +227,7 @@ namespace AwesomeTanks
                 if (coins >= 3000)
                 {
                     coins -= 3000;
-                    coinsLabel.Text = $"{coins}";
+                    coinsLabel.Text = $"Coins: {coins}";
                     Form1.speedLevel++;
                     speed4.BackColor = Color.Green;
                     speedAmountLabel.Text = "Price : 7000";
@@ -239,7 +239,7 @@ namespace AwesomeTanks
                 if (coins >= 7000)
                 {
                     coins -= 7000;
-                    coinsLabel.Text = $"{coins}";
+                    coinsLabel.Text = $"Coins: {coins}";
                     Form1.speedLevel++;
                     speed5.BackColor = Color.Green;
                     speedAmountLabel.Text = "";
@@ -258,7 +258,7 @@ namespace AwesomeTanks
                 if (coins > 3000)
                 {
                     coins -= 3000;
-                    coinsLabel.Text = $"{coins}";
+                    coinsLabel.Text = $"Coins: {coins}";
                     Form1.pierceLevel++;
                     pierce2.BackColor = Color.Green;
                     pierceAmountLabel.Text = "Price : 10000";
@@ -270,7 +270,7 @@ namespace AwesomeTanks
                 if (coins > 10000)
                 {
                     coins -= 10000;
-                    coinsLabel.Text = $"{coins}";
+                    coinsLabel.Text = $"Coins: {coins}";
                     Form1.pierceLevel++;
                     pierce3.BackColor = Color.Green;
                     pierceAmountLabel.Text = "";

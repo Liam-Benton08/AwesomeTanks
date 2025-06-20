@@ -51,14 +51,14 @@ namespace AwesomeTanks
             else if(type == 4)
             {
                 hp = fullHp = 80;
-                spawnTimer = 50;
+                spawnTimer = 80;
                 coinValue = 5000;
 
             }
             else if(type == 5)
             {
-                hp = fullHp = 200;
-                spawnTimer = 600;
+                hp = fullHp = 150;
+                spawnTimer = 750;
                 coinValue = 20000;
             }
         }

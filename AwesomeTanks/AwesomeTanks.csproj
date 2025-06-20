@@ -135,6 +135,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\stone %283%29.png" />
+    <None Include="Resources\stone %282%29.png" />
+    <None Include="Resources\stone %281%29.png" />
     <None Include="Resources\Record %28online-voice-recorder.com%29 %284%29.wav" />
     <None Include="Resources\Record %28online-voice-recorder.com%29 %283%29.wav" />
     <None Include="Resources\Record %28online-voice-recorder.com%29 %282%29.wav" />
@@ -149,6 +152,7 @@
     <None Include="Resources\download-fotor-2025061914547-removebg-preview.png" />
     <None Include="Resources\download-fotor-2025061914536-removebg-preview.png" />
     <None Include="Resources\download-removebg-preview %283%29.png" />
+    <None Include="Resources\brick.png" />
     <Content Include="Resources\level4Spawners.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
