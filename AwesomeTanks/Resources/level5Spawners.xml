@@ -31,11 +31,6 @@
 		<type>2</type>
 	</spawner>
 	<spawner>
-		<x>850</x>
-		<y>900</y>
-		<type>2</type>
-	</spawner>
-	<spawner>
 		<x>500</x>
 		<y>100</y>
 		<type>3</type>
